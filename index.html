@@ -1,0 +1,31 @@
+<!-- O pagină web care schimbă culoarea de fundal când apeși un buton -->
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Schimbă culoarea</title>
+		<style>
+			body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 2rem; }
+			button { padding: 0.6rem 1rem; font-size: 1rem; border-radius: 6px; cursor: pointer }
+		</style>
+	</head>
+	<body>
+		<h1>Schimbă culoarea</h1>
+		<p>Apasă butonul pentru a schimba culoarea de fundal.</p>
+		<button id="changeColor">Schimbă culoarea</button>
+
+		<script>
+			const btn = document.getElementById('changeColor');
+			btn.addEventListener('click', () => {
+				document.body.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 85%)`;
+			});
+		</script>
+
+		<!-- Live reload hints:
+				 - VS Code Live Server extension: no extra script needed; click "Go Live".
+				 - If using a livereload server on port 35729, you can add:
+					 <script src="http://localhost:35729/livereload.js"></script>
+		-->
+	</body>
+</html>
